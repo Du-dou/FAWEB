@@ -951,12 +951,12 @@ export default {
       });
     },
     searchFromHomepage() {
-      if (!this.userInfo.noDataSearch && this.current_status.keyword === '') {
-        this.$message({
-          message: "请输入关键词进行检索！",
-        });
-        return false
-      }
+      // if (!this.userInfo.noDataSearch && this.current_status.keyword === '') {
+      //   this.$message({
+      //     message: "请输入关键词进行检索！",
+      //   });
+      //   return false
+      // }
 
       this.getResultList(this.current_status);
 
@@ -964,12 +964,12 @@ export default {
         this.getLeftTree(this.current_status);
     },
     searchFromHeader(keyword) {
-      if (!this.userInfo.noDataSearch && keyword === '') {
-        this.$message({
-          message: "请输入关键词进行检索！",
-        });
-        return false
-      }
+      // if (!this.userInfo.noDataSearch && keyword === '') {
+      //   this.$message({
+      //     message: "请输入关键词进行检索！",
+      //   });
+      //   return false
+      // }
 
       this.current_status.keyword = keyword;
       this.current_status.page_num = 1
@@ -989,12 +989,12 @@ export default {
         this.getLeftTree(this.current_status)
     },
     searchFromSeachResource(index) {
-      if (!this.userInfo.noDataSearch && this.current_status.keyword === '') {
-        this.$message({
-          message: "请输入关键词进行检索！",
-        });
-        return false
-      }
+      // if (!this.userInfo.noDataSearch && this.current_status.keyword === '') {
+      //   this.$message({
+      //     message: "请输入关键词进行检索！",
+      //   });
+      //   return false
+      // }
 
       //变动搜索范围时，当前的搜索条件只改变search_field，且把左侧清空复原，请求第一页
       // this.current_status.search_field=index;
@@ -1014,12 +1014,13 @@ export default {
         this.getLeftTree(this.current_status)
     },
     searchFromSearchField(index) {
-      if (!this.userInfo.noDataSearch && this.current_status.keyword === '') {
-        this.$message({
-          message: "请输入关键词进行检索！",
-        });
-        return false
-      }
+      // if (!this.userInfo.noDataSearch && this.current_status.keyword === '') {
+      //   this.$message({
+      //     message: "
+      //     请输入关键词进行检索！",
+      //   });
+      //   return false
+      // }
 
       //变动搜索范围时，当前的搜索条件只改变search_field，且把左侧清空复原，请求第一页
       this.current_status.search_field = index;
@@ -1036,12 +1037,12 @@ export default {
         this.getLeftTree(this.current_status)
     },
     handleCurrentChange(page_number) {
-      if (!this.userInfo.noDataSearch && this.current_status.keyword === '') {
-        this.$message({
-          message: "请输入关键词进行检索！",
-        });
-        return false
-      }
+      // if (!this.userInfo.noDataSearch && this.current_status.keyword === '') {
+      //   this.$message({
+      //     message: "请输入关键词进行检索！",
+      //   });
+      //   return false
+      // }
 
       this.current_status.page_num = page_number
       this.getResultList(this.current_status)
@@ -1122,12 +1123,12 @@ export default {
         this.getLeftTree(this.current_status)
     },
     onSortClick(field, direction) {  //排序
-      if (!this.userInfo.noDataSearch && this.current_status.keyword === '') {
-        this.$message({
-          message: "请输入关键词进行检索！",
-        });
-        return false
-      }
+      // if (!this.userInfo.noDataSearch && this.current_status.keyword === '') {
+      //   this.$message({
+      //     message: "请输入关键词进行检索！",
+      //   });
+      //   return false
+      // }
 
       this.current_status.sort_field = field;
       this.current_status.sort_direction = direction;

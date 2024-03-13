@@ -262,12 +262,12 @@ export default {
     clickSearch() {
       //如果没有登录则弹出登录框
       //如果没有空检索权限，且关键词为空，则提示输入关键词
-      if (!this.userInfo.noDataSearch && this.searchText === '') {
-        this.$message({
-          message: "请输入关键词进行检索！",
-        });
-        return false
-      }
+      // if (!this.userInfo.noDataSearch && this.searchText === '') {
+      //   this.$message({
+      //     message: "请输入关键词进行检索！",
+      //   });
+      //   return false
+      // }
 
       //通过vuex中的参数来向结果页中传搜索参数
       this.homeSearchParam.search_field = this.currentIndex;
@@ -332,12 +332,12 @@ export default {
       //   return false;
       // }
 
-      if (!this.userInfo.noDataSearch && this.resultKeyWords == ' ') {
-        this.$message({
-          message: "请输入关键词进行检索！",
-        });
-        return false
-      }
+      // if (!this.userInfo.noDataSearch && this.resultKeyWords == ' ') {
+      //   this.$message({
+      //     message: "请输入关键词进行检索！",
+      //   });
+      //   return false
+      // }
       this.$router.push({path: "/result"});
     },
     registerSuccess() {
@@ -440,11 +440,11 @@ export default {
 .header_w {
   .header {
     //width: 100%!important;
-    width: 1400px;
+    //width: 1400px;
     padding: 0 40px !important;
     //margin: 0!important;
-    margin: 0 auto;
-    box-sizing: border-box !important;
+    //margin: 0 auto;
+    //box-sizing: border-box !important;
   }
 }
 </style>

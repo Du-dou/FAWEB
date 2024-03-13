@@ -29,29 +29,4 @@ export default {
 </script>
 
 <style>
-* {
-  padding: 0;
-  margin: 0;
-}
-body,
-html {
-  height: 100%;
-}
-li,
-ul {
-  list-style: none;
-}
-#app {
-  font-family: "Micorsoft Yahei", "HYe1gj", "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  height: 100%;
-}
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
-input[type="number"] {
-  -moz-appearance: textfield;
-}
 </style>

@@ -34,7 +34,9 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    'element-ui/lib/theme-chalk/index.css'
+    'element-ui/lib/theme-chalk/index.css',
+    '@/static/font/iconfont.css',
+    '@/css/index.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -46,6 +48,7 @@ export default {
     {
       src: '@/plugins/vue-qr.js', ssr: false
     },
+    {src:'@/static/font/iconfont.js', ssr: false},
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
