@@ -1,9 +1,10 @@
 
 const base={
-  baseURL:"https://www.lawknows.com/",
+  baseURL:"https://www.lawsees.com/",
   // baseURL:"https://119.3.231.128",
 
   result:"/api/article/pageList",
+  restResult:"/api/article/rest/pageList",
   aggreateEffeclevel:"/api/sysDictData/rest/effecLevel/list",
   aggreateTimeliness:"/api/sysDictData/rest/timeLiness/list",
   aggreatePublishOffice:"/api/sysDictData/rest/pulishOffice/list",

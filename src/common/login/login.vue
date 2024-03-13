@@ -122,6 +122,7 @@ export default {
       }).then((res) => {
         // console.log(res.data)
         if (res.code === 0) {
+          this.getToken(res.data.token);
           that.getUserInfoRequest(res.data.token)
           if (that.isRemember) {
             localStorage.setItem('user', JSON.stringify({
@@ -143,7 +144,6 @@ export default {
       });
     },
     getUserInfoRequest(token) {
-      this.getToken(token);
       let that = this;
       API.getUserInfo().then((res) => {
         if (res.code == 0) {

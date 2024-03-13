@@ -261,10 +261,6 @@ export default {
     ]),
     clickSearch() {
       //如果没有登录则弹出登录框
-      if (!this.token) {
-        this.loginIsShow = true;
-        return false;
-      }
       //如果没有空检索权限，且关键词为空，则提示输入关键词
       if (!this.userInfo.noDataSearch && this.searchText === '') {
         this.$message({
@@ -281,10 +277,6 @@ export default {
       this.$router.push({path: "/result"});
     },
     hotSearch(keyword) {
-      if (!this.token) {
-        this.loginIsShow = true;
-        return false;
-      }
 
       //通过vuex中的参数来向结果页中传搜索参数
       this.homeSearchParam.search_field = 0;
@@ -305,10 +297,6 @@ export default {
       this.show = false
     },
     goDetail(item) {
-      if (!this.userInfo) {
-        this.login()
-        return false
-      }
       window.open(location.origin + `/detail/${item.articleId}`);
     },
     setsearchText() {
@@ -344,10 +332,6 @@ export default {
       //   return false;
       // }
 
-      if (!this.token) {
-        this.loginIsShow = true;
-        return false;
-      }
       if (!this.userInfo.noDataSearch && this.resultKeyWords == ' ') {
         this.$message({
           message: "请输入关键词进行检索！",

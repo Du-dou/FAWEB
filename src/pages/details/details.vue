@@ -149,7 +149,7 @@
 
         <!-- 无权限 -->
         <div class="no_access" v-if="baseInfo.article&&!baseInfo.article.authority">
-          <span @click="buyall">开通VIP会员</span>即可浏览所有文章内容
+          文章内容未完全展示，请<span @click="buyall">登录或注册</span>。
         </div>
 
         <!-- <div class="left">

@@ -36,7 +36,7 @@
       <button class="login_btn" :disabled="registerDisabled" @click.prevent="handelRegister">注册</button>
       <div class="login_bottom">
         <div class="left">
-          <img :src="isRemember?'@/static/CheckboxChecked.png':'@/static/CheckboxUnchecked.png'" @click="remember">
+          <img :src="isRemember?CheckboxChecked:CheckboxUnchecked" @click="remember">
           <span>我已阅读并同意</span>
           <span class="active">《易知服务条款》</span>
         </div>
@@ -50,9 +50,14 @@
 <script>
 import md5 from 'js-md5'
 import API from '@/api/index'
+import {httpPost} from '@/api/index'
+import CheckboxChecked from "@/static/CheckboxChecked.png";
+import CheckboxUnchecked from "@/static/CheckboxUnchecked.png";
 export default {
   data(){
     return {
+      CheckboxChecked,
+      CheckboxUnchecked,
       tipsShow:false,
       isRemember:false,
       registerPhone:'',//注册手机号

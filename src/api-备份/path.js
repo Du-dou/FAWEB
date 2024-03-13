@@ -1,6 +1,6 @@
 
 const base={
-  baseURL:"https://www.lawknows.com/",
+  baseURL:"https://www.lawsees.com/",
   // baseURL:"https://119.3.231.128",
 
   result:"/api/article/pageList",

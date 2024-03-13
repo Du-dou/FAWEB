@@ -47,7 +47,7 @@ import Checkbox from "element-ui/packages/checkbox";
 // Vue.use(VueAwesomeSwiper, /* { default options with global component } */ )
 
 Vue.config.productionTip = false
-Vue.prototype.$url = 'https://www.lawknows.com/file/';
+Vue.prototype.$url = 'https://www.lawsees.com/file/';
 // Vue.prototype.$url = 'http://119.3.231.128:30140/file/';
 
 axios.interceptors.response.use(response => {

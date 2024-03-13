@@ -8,7 +8,7 @@ export default {
   },
   proxy: {
     '/api': {
-      target: 'https://www.lawknows.com',
+      target: 'https://www.lawsees.com',
       changeOrigin: true,
 
       // pathRewrite: {

@@ -3,7 +3,7 @@ import axios from 'axios'
 
 const Request = axios.create({
   // TODO 环境变量
-  baseURL: process.server ? 'https://www.lawknows.com' : '',
+  baseURL: process.server ? 'https://www.lawsees.com' : '',
   headers: {'Content-Type': 'application/json; charset=utf-8'},
   timeout: 5000
 })
