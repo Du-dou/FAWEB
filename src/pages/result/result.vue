@@ -801,7 +801,7 @@ export default {
       }
     };
   },
-  created() {
+  mounted() {
     this.current_status.keyword = this.homeSearchParam.keyword;
     this.current_status.search_field = this.homeSearchParam.search_field;
     this.current_status.search_resource = this.homeSearchParam.search_resource;

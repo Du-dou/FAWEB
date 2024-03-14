@@ -1264,7 +1264,7 @@ export default {
       color: #080808;
       margin-bottom: 40px;
 
-      > > > p {
+      ::v-deep p {
         //font-size : 16px;
         margin-bottom: 20px;
       }
