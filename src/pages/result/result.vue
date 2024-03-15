@@ -812,16 +812,17 @@ export default {
     // }
 
     this.searchFromHomepage()
-  },
-  beforeMount() {
-    // let that = this;
-    // $bus.$on("keysordsHandle", (t) => {
-    //   this.getSearchListNoLogin();
-    // });
     this.getAdList(); //广告位
-    // this.getLatest()
-
   },
+  // beforeMount() {
+  //   // let that = this;
+  //   // $bus.$on("keysordsHandle", (t) => {
+  //   //   this.getSearchListNoLogin();
+  //   // });
+  //   this.getAdList(); //广告位
+  //   // this.getLatest()
+  //
+  // },
   computed: {
     ...mapState([
       "hasLogin",
