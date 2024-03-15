@@ -23,9 +23,9 @@ import Page404 from "@/pages/page404/page404"
 import Pay from "@/pages/pay/pay"
 import singlePay from "@/pages/pay/single_pay"
 
-// 疑似废弃
+// TODO 登录跳转 要带参数
 // import Login2 from "@/pages/link/link"
-//
+
 
 
 Vue.use(Router)

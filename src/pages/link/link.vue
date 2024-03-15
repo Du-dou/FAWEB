@@ -22,7 +22,7 @@ export default {
     this.Jump()
   },
   methods:{
-    ...mapMutations(["login","getToken"]),
+    ...mapMutations(["login","setToken"]),
     Jump(){
       // console.log(this.params)
       // console.log('加密后',crypto.set('eft0002,eft0002eft'))
@@ -58,7 +58,7 @@ export default {
       API.getUserInfo().then((res)=>{
         if(res.code == 0){
           console.log(res.data)
-          that.getToken(token);
+          that.setToken(token);
           that.login(res.data);
           // that.$emit("handleLoginClose");
           // that.$emit("loginSuccess");

@@ -84,7 +84,7 @@ export default {
     ...mapState(["hasLogin", "userInfo", "token"]),
   },
   methods: {
-    ...mapMutations(["login", "getToken"]),
+    ...mapMutations(["login", "setToken"]),
     nextStep() {
       //下一步
       this.step = 2;

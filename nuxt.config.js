@@ -84,7 +84,8 @@ export default {
   build: {
     transpile: [/^element-ui/, 'swiper','vue-awesome-swiper'],
     // 防止重复打包
-    vendor: ['axios']
+    vendor: ['axios'],
+    loadingScreen: false,
   },
   vue:{
     sanitizier: false

@@ -200,7 +200,7 @@ export default {
     // VueCropper,
   },
   methods: {
-    ...mapMutations(["login", "getToken"]),
+    ...mapMutations(["login", "setToken"]),
     chooseImage(e) {
       let imgUrl = this.getObjectURL(e.target.files[0]);
       this.option.img = imgUrl;

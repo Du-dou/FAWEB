@@ -38,8 +38,6 @@ export default () => new Vuex.Store({
 
     resultKeyWords: null,
 
-    // 这个变量是资源类型，比如法规，案例等，目前不需啊
-    // resultTypes: localStorage.getItem('resultTypes') || 0,
 
     // 这个变量是标题搜索或全文搜索
     // search_fw_current: localStorage.getItem('search_fw_current') || 0,
@@ -101,11 +99,9 @@ export default () => new Vuex.Store({
       localStorage.setItem('isRemember',data)
     },
     login(state, provider) {
-      state.hasLogin = true;
       state.userInfo = provider
 
       localStorage.setItem('userInfo', JSON.stringify(provider))
-      localStorage.setItem('hasLogin', true)
 
     },
     logout(state) {
@@ -116,14 +112,18 @@ export default () => new Vuex.Store({
       localStorage.setItem('userInfo', '');
       localStorage.setItem('token', '');
     },
-    getToken(state, token) {
+    setToken(state, token) {
       state.token = token;
       localStorage.setItem('token', token);
+      state.hasLogin = true;
+      localStorage.setItem('hasLogin', true)
     },
 
     setKeyWord(state, data) {
       state.keyWord = JSON.parse(JSON.stringify(data))
     },
+
+
     clearAllKeyWord(state, data) {
       state.keyWordSubmit.effecLevelId = data;
       state.keyWordSubmit.timeLinessID = data;

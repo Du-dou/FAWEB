@@ -21,32 +21,6 @@
       </div>
     </div>
       <div class="right" v-show="allShow">
-      <!-- 搜索框 -->
-      <!-- <div class="right_search" v-show="searchRightShow">
-        <div class="select_w" @mouseover="select_list_show = true" @mouseleave="select_list_show = false">
-          <div class="select_w_s" >
-            <span>{{ currentSelect }}</span>
-            <img src="@/static/lala.png" />
-          </div>
-          <ul class="select_list" v-show="select_list_show">
-            <li
-              v-for="(items, index) in types"
-              :key="items.type"
-              @click="changeTypes(items, index)"
-            >
-              {{ items.text }}
-            </li>
-          </ul>
-        </div>
-        <div class="input_wraper">
-          <input type="text" placeholder="搜索"   v-model.trim="searchText"
-            @keyup.enter="search"
-            @input="setsearchText" />
-          <div class="img_w" @click="search">
-            <img src="@/static/search.png" />
-          </div>
-        </div>
-      </div> -->
       <div class="userInfo" v-show="hasLogin" >
 <!--        <div class="avatar_w" v-show="userInfo.userType===2">-->
 <!--          <div class="avatar_img_w">-->
@@ -80,7 +54,6 @@
 </template>
 <script>
 import { mapState, mapMutations } from "vuex";
-import types from "@/api/common";
 export default {
   props: {
     isShow: {
@@ -106,7 +79,6 @@ export default {
   },
   data() {
     return {
-      types: types,
       currentSelect: "资源类别",
       select_list_show: false,
       searchText:''

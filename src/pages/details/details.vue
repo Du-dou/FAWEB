@@ -500,8 +500,11 @@ import commonLogin from "@/common/login/login";
 import MFooter from "@/common/footer/footer";
 import commonRegister from "@/common/register/register";
 import registerSuccess from "@/common/success/success";
+
 import API from "@/api/index";
 import {httpGet, httpPost} from "@/api/index";
+
+
 import {mapState} from "vuex";
 
 export default {

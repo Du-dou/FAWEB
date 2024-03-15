@@ -84,15 +84,12 @@ import CheckboxUnchecked from "@/static/CheckboxUnchecked.png";
 import API from "@/api/index";
 import {httpGet} from "@/api/index";
 import {mapState} from "vuex";
-import types from "@/api/common";
 
-types.unshift({text: '全部分类', type: -1})
 export default {
   data() {
     return {
       text: "全部分类",
       tyesShow: false,
-      type: types,
       recordList: [],
       allChecked: false,
       articleType: "",

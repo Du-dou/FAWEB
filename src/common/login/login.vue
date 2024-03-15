@@ -70,7 +70,7 @@ export default {
     }
   },
   methods: {
-    ...mapMutations(["login", "getToken", "isRememberChange"]),
+    ...mapMutations(["login", "setToken", "isRememberChange"]),
     handleClose() {
       this.$emit("handleLoginClose");
     },
@@ -122,7 +122,7 @@ export default {
       }).then((res) => {
         // console.log(res.data)
         if (res.code === 0) {
-          this.getToken(res.data.token);
+          this.setToken(res.data.token);
           that.getUserInfoRequest(res.data.token)
           if (that.isRemember) {
             localStorage.setItem('user', JSON.stringify({

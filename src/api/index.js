@@ -5,7 +5,6 @@ import Request from "../utils/request";
 
 
 // token 可不传 在request中已补充
-
 export const httpGet = (url, token, params) => Request({url, method: "GET", params})
 export const httpPost = (url, token, data) => Request({url, method: "POST", data})
 export const httpPut = (url, data) => Request({url, method: "PUT", data})

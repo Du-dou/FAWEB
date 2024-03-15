@@ -181,15 +181,12 @@ import commonRegister from "@/common/register/register";
 import registerSuccess from "@/common/success/success";
 
 import {httpGet} from "@/api/index";
-import types from "@/api/common";
 
-import {get_test, post_test, test} from "../../api";
 
 export default {
   data() {
     let self = this;
     return {
-      changeTypes: types,
       bannerList: [],
       swiperOptions: {
         pagination: {

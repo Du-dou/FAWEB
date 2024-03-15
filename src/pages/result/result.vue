@@ -628,12 +628,10 @@ import hotRecommend from "@/common/hot-recommend/hot-recommend";
 // import Pagination from "@/common/pagination/pagination";
 
 import registerSuccess from "@/common/success/success";
-import myTree from "@/common/z-tree/tree";
 import API from "@/api/index";
-import {httpGet, limitKeyWords, httpPost, deleteAllCollect} from "@/api/index";
+import {httpGet, httpPost, deleteAllCollect} from "@/api/index";
 import {mapState, mapMutations} from "vuex";
 import $bus from "@/api/bus";
-import types from "@/api/common";
 
 import base from "../../api/path";
 
@@ -721,7 +719,6 @@ export default {
       loginIsShow: false,
       registerisShow: false,
       resultList: "",
-      types: types,
       successTip: false,
       hotRecommendTitle: "热门推荐",
       search_resource: [
@@ -1805,7 +1802,6 @@ export default {
     MHeader,
     commonLogin,
     commonRegister,
-    myTree,
     hotRecommend,
     MFooter,
     registerSuccess,
