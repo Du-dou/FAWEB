@@ -100,7 +100,6 @@
 <script>
 import md5 from "js-md5";
 import API from "@/api/index";
-import {sendCode, httpPost, httpPut} from "@/api/index";
 import MHeader from "@/common/header/header";
 import MFooter from "@/common/footer/footer";
 
@@ -139,7 +138,7 @@ export default {
   methods: {
     getCodeCaptcha() {
       //获取图形验证码
-      httpPost("/api/rest/captcha", "", "").then((res) => {
+      API.getCodeCaptcha().then((res) => {
         // console.log(res);
         if (res.code == 0) {
           this.captcha = res.data;
@@ -209,7 +208,7 @@ export default {
     },
     verifyCode() {
       this.confirmDisabled = true;
-      httpPost("/api/rest/verifyCode", {
+      API.verifyCode( {
         action: 1,
         tel: this.phone,
         code: this.code,
@@ -262,7 +261,7 @@ export default {
         return false;
       }
       that.confirmDisabled = true;
-      httpPut("/api/userInfo/rest/getBackPwd", {
+      API.resetPassword({
         codeToken: that.token,
         pwd: md5(that.newPassword),
         verificationCode: that.verificationCode

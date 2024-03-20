@@ -73,7 +73,7 @@
   </div>
 </template>
 <script>
-import {httpGet} from "@/api/index";
+import API from "@/api";
 import {mapState} from "vuex";
 
 export default {
@@ -104,7 +104,7 @@ export default {
       this.getBuyList();
     },
     getMemberInfo() {
-      httpGet("/api/member", this.token, "").then((res) => {
+      API.getMember().then((res) => {
         if (res.code == 0) {
           this.memberInfo = res.data;
           this.ishow = true;
@@ -115,7 +115,7 @@ export default {
     //获取购买列表
     getBuyList() {
       let that = this;
-      httpGet("/api/userArticle/pageList", this.token, {
+      API.getUserArticleList({
         page: that.page,
         size: that.size,
       }).then((res) => {

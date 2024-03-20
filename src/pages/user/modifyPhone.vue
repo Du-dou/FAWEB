@@ -54,7 +54,6 @@
 <script>
 import { mapState, mapMutations } from "vuex";
 import API from "@/api/index";
-import {httpPost } from "@/api/index";
 
 export default {
   data() {
@@ -94,7 +93,7 @@ export default {
       this.step = 1;
     },
     getCodeCaptcha(){//获取图形验证码
-      httpPost('/api/rest/captcha','','').then((res)=>{
+      API.getCodeCaptcha().then((res)=>{
         // console.log(res)
         if(res.code == 0){
           this.captcha = res.data

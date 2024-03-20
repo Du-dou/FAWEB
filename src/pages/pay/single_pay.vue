@@ -52,7 +52,7 @@
 import MHeader from "@/common/header/header";
 import MFooter from "@/common/footer/footer";
 import { mapState } from "vuex";
-import { httpGet, httpPost } from "@/api/index";
+import API from "@/api";
 export default {
   data() {
     return {
@@ -87,11 +87,7 @@ export default {
   methods: {
     checkVxResult(outTradeNo) {
       let that = this;
-      httpGet(
-        `/api/accountFlow/wxPayResult/${outTradeNo}`,
-        this.token,
-        ""
-      ).then((res) => {
+      API.getWxPayResult(outTradeNo).then((res) => {
         if (res.code == 0) {
           clearInterval(that.timer);
           that.$message({
@@ -103,7 +99,7 @@ export default {
       });
     },
     getPrice() {
-      httpGet(`/api/article/detail/${this.articleId}`, this.token, {}).then(
+      API.getArticleDetail(this.articleId).then(
         (res) => {
           if (res.code == 0) {
             this.price = res.data.article.articlePrice;
@@ -114,8 +110,7 @@ export default {
     pay(tradeType, operateId) {
       let that = this;
       that.loading = true;
-      httpPost(
-        "/api/accountFlow",
+      API.accountFlow(
         {
           tradeType: tradeType,
           operateId: operateId,

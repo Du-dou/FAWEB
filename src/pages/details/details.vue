@@ -502,7 +502,7 @@ import commonRegister from "@/common/register/register";
 import registerSuccess from "@/common/success/success";
 
 import API from "@/api/index";
-import {httpGet, httpPost} from "@/api/index";
+import {httpGet} from "@/api/index";
 
 
 import {mapState} from "vuex";
@@ -595,8 +595,6 @@ export default {
       console.log(222)
 
       let res = await httpGet(`/api/article/rest/detail/${data.params.id}`)
-      console.log(33)
-      console.log(res)
       if (res.code == 0) {
         content = {
           baseInfo: res.data,
@@ -665,7 +663,7 @@ export default {
     }
     ,
     getLatest() {
-      httpGet('/api/article/rest/publishDateTimeList').then((res) => {
+      API.publishDateTimeList().then((res) => {
         if (res.code == 0) {
           this.latestList = res.data
           this.latestListSelect = this.latestList.slice(0, 8)
@@ -674,7 +672,7 @@ export default {
     }
     ,
     getEffective() {
-      httpGet('/api/article/rest/implementDateList').then((res) => {
+      API.publishDateTimeList().then((res) => {
         if (res.code == 0) {
           this.effectiveList = res.data
           this.effectiveListSelect = this.effectiveList.slice(0, 8)
@@ -800,9 +798,8 @@ export default {
     submitAjax(desc) {
       //获取详情
 
-      var baseUrl = `/api/articleQuestion`;
 
-      httpPost(baseUrl, {
+      API.articleQuestion( {
         articleId: this.articleId,
         desc: desc
       }, this.token).then((res) => {
@@ -914,7 +911,7 @@ export default {
     }
     ,
     collection(item) {
-      httpPost(`/api/userCollection/${this.articleId}`, "", this.token).then(
+      API.userCollection(this.articleId, "").then(
         (res) => {
           if (res.code == 0 || res.code == 120) {
             this.$message({
@@ -956,7 +953,7 @@ export default {
         this.loginIsShow = true;
         return false;
       }
-      httpPost(`/api/praiseArticle/${this.articleId}/${flag}`, "", this.token).then(
+      API.praiseArticle().then(
         (res) => {
           if (res.code == 0 || res.code == 120) {
             if (flag) {

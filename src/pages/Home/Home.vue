@@ -179,8 +179,8 @@ import MFooter from "@/common/footer/footer";
 import commonLogin from "@/common/login/login";
 import commonRegister from "@/common/register/register";
 import registerSuccess from "@/common/success/success";
+import API from "@/api";
 
-import {httpGet} from "@/api/index";
 
 
 export default {
@@ -353,7 +353,7 @@ export default {
       this.$router.push("/forgetPassword");
     },
     async getLeft() {
-      let res = await httpGet('/api/article/rest/publishDateTimeList')
+      let res = await API.publishDateTimeList()
       // console.log(res)
       if (res.code == 0) {
         this.leftList = res.data
@@ -361,7 +361,7 @@ export default {
       }
     },
     async getRight() {
-      let res = await httpGet('/api/article/rest/implementDateList')
+      let res = await API.implementDateList()
       // console.log(res)
       if (res.code == 0) {
         this.rightList = res.data
@@ -393,9 +393,7 @@ export default {
       }
     },
     async getBannerList() {
-      console.log(httpGet)
-      let res = await httpGet("/api/banner/rest/list", "", "")
-      console.log(res)
+      let res = await API.bannerRestList()
       if (res.code == 0) {
         this.bannerList = res.data;
         if (this.bannerList.length > 1) {
@@ -415,7 +413,7 @@ export default {
       }
     },
     async getSearchKeyWords() {
-      let res = await httpGet("/api/searchKeyword/rest/list/10", "", "")
+      let res = await API.searchKeywordList()
       if (res.code == 0) {
         this.searchKeyWords = res.data;
       }

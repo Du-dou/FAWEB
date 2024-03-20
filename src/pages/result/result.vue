@@ -629,7 +629,7 @@ import hotRecommend from "@/common/hot-recommend/hot-recommend";
 
 import registerSuccess from "@/common/success/success";
 import API from "@/api/index";
-import {httpGet, httpPost, deleteAllCollect} from "@/api/index";
+import {httpGet} from "@/api/index";
 import {mapState, mapMutations} from "vuex";
 import $bus from "@/api/bus";
 
@@ -1721,7 +1721,7 @@ export default {
     },
     //点赞
     praiseArticle(item) {
-      httpPost(`/api/praiseArticle/${item.articleId}/true`, '', this.token).then((res) => {
+      API.praiseArticle(item.articleId,true).then((res) => {
         if (res.code == 0 || res.code == 120) {
           this.$message({
             type: "success",
@@ -1739,7 +1739,7 @@ export default {
     },
     //取消点赞
     canclePraise(item) {
-      httpPost(`/api/praiseArticle/${item.articleId}/false`, '', this.token).then((res) => {
+      API.praiseArticle(item.articleId,true).then((res) => {
         if (res.code == 0 || res.code == 120) {
           this.$message({
             type: "success",
@@ -1757,7 +1757,7 @@ export default {
     },
     //收藏
     collection(item) {
-      httpPost(`/api/userCollection/${item.articleId}`, "", this.token).then(
+      API.userCollection(item.articleId).then(
         (res) => {
           if (res.code == 0 || res.code == 120) {
             this.$message({

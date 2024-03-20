@@ -50,7 +50,6 @@
 <script>
 import md5 from 'js-md5'
 import API from '@/api/index'
-import {httpPost} from '@/api/index'
 import CheckboxChecked from "@/static/CheckboxChecked.png";
 import CheckboxUnchecked from "@/static/CheckboxUnchecked.png";
 export default {
@@ -83,7 +82,7 @@ export default {
       this.isRemember = !this.isRemember
     },
     getCodeCaptcha(){//获取图形验证码
-      httpPost('/api/rest/captcha','','').then((res)=>{
+      API.getCodeCaptcha().then((res)=>{
         // console.log(res)
         if(res.code == 0){
           this.captcha = res.data

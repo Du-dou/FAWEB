@@ -56,7 +56,6 @@
 import CheckboxChecked from "@/static/CheckboxChecked.png";
 import CheckboxUnchecked from "@/static/CheckboxUnchecked.png";
 import API from "@/api/index";
-import {httpGet} from "@/api/index";
 import {mapState, mapMutations} from "vuex";
 
 export default {
@@ -150,7 +149,7 @@ export default {
       if (type == 1) {
         that.page = 1
       }
-      httpGet("/api/notice/pageList", that.token, {
+      API.getNoticeList({
         page: that.page,
         size: that.size,
       }).then((res) => {
