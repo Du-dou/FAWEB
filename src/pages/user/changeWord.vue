@@ -49,7 +49,7 @@ export default {
   },
   created() {},
   computed: {
-    ...mapState(["hasLogin", "userInfo", "token"]),
+    ...mapState([ "userInfo", "token"]),
   },
   methods: {
     subbmitChangePassword() {

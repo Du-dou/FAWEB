@@ -822,7 +822,6 @@ export default {
   // },
   computed: {
     ...mapState([
-      "hasLogin",
       "userInfo",
       "token",
       "keyWord",

@@ -95,7 +95,7 @@ export default {
     this.currentSet();
   },
   computed: {
-    ...mapState(["hasLogin", "userInfo", "token"]),
+    ...mapState([ "userInfo", "token"]),
   },
   methods: {
     currentSet() {

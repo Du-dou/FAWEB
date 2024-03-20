@@ -194,7 +194,7 @@ export default {
     this.briefIntroduction = this.userInfo.briefIntroduction;
   },
   computed: {
-    ...mapState(["hasLogin", "userInfo", "token"]),
+    ...mapState([ "userInfo", "token"]),
   },
   components: {
     // VueCropper,

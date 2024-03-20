@@ -107,7 +107,7 @@ export default {
     this.getList();
   },
   computed: {
-    ...mapState(["hasLogin", "userInfo", "token"]),
+    ...mapState([ "userInfo", "token"]),
   },
   methods: {
     showTypes() {

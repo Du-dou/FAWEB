@@ -624,7 +624,7 @@ export default {
   ,
   computed: {
     ...
-      mapState(["hasLogin", "userInfo", "token"]),
+      mapState(["userInfo", "token"]),
     swiper() {
       return this.$refs.mySwiper.swiper;
     }

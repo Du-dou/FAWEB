@@ -21,7 +21,7 @@
       </div>
     </div>
       <div class="right" v-show="allShow">
-      <div class="userInfo" v-show="hasLogin" >
+      <div class="userInfo" v-show="token" >
 <!--        <div class="avatar_w" v-show="userInfo.userType===2">-->
 <!--          <div class="avatar_img_w">-->
 <!--              <img :src="$url + userInfo.avatarImg" class="avatar" />-->
@@ -44,7 +44,7 @@
           <span>退出</span>
         </div>
       </div>
-      <div class="login_raper" v-show="!hasLogin">
+      <div class="login_raper" v-show="!token">
         <div class="register" @click="registerHandle">注册</div>
         <div class="login" @click="loginHandle">登录</div>
       </div>
@@ -86,7 +86,7 @@ export default {
   },
   computed: {
     ...mapState([
-      "hasLogin",
+      "token",
       "userInfo"]),
   },
   methods: {

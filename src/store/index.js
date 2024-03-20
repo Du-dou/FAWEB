@@ -6,7 +6,6 @@ Vue.use(Vuex)
 // export default () => new Vuex.Store({})
 export default () => new Vuex.Store({
   state: {
-    // hasLogin: localStorage.getItem('hasLogin') || false,
     // userInfo: localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')) : '',
     // token: localStorage.getItem('token') || '',
     // isRemember:localStorage.getItem('isRemember') || false,
@@ -22,7 +21,6 @@ export default () => new Vuex.Store({
     //
     // resultKeyWords: localStorage.getItem('resultKeyWords') || null,
 
-    hasLogin:  false,
     userInfo: '',
     token: '',
     isRemember: false,
@@ -105,18 +103,14 @@ export default () => new Vuex.Store({
 
     },
     logout(state) {
-      state.hasLogin = false;
       state.userInfo = "";
       state.token = "";
-      localStorage.setItem('hasLogin', '');
       localStorage.setItem('userInfo', '');
       localStorage.setItem('token', '');
     },
     setToken(state, token) {
       state.token = token;
       localStorage.setItem('token', token);
-      state.hasLogin = true;
-      localStorage.setItem('hasLogin', true)
     },
 
     setKeyWord(state, data) {
@@ -287,10 +281,8 @@ export default () => new Vuex.Store({
   },
   actions: {
     logout(state) {
-      state.hasLogin = false;
       state.userInfo = "";
       state.token = "";
-      localStorage.setItem('hasLogin', '');
       localStorage.setItem('userInfo', '');
       localStorage.setItem('token', '');
     },
