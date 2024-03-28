@@ -282,7 +282,7 @@ export default {
         });
     },
     loginNow() {
-      this.$router.replace("/home");
+      this.$router.replace("/");
     },
   },
 };

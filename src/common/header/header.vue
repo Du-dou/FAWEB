@@ -100,7 +100,7 @@ export default {
       if(!this.searchText){
         return false
       }
-      this.$router.push({path:'/result'});
+      this.$router.push({path:'/result.html'});
     },
     loginHandle() {
       this.$emit("loginClick");
@@ -115,14 +115,14 @@ export default {
     },
     handleLoginOut() {
       this.logout();
-      this.$router.push("/home");
+      this.$router.push("/");
     },
     goToCenter() {
-      if (this.$router.currentRoute.fullPath == "/user/center/message") {
+      if (this.$router.currentRoute.fullPath == "/user/message.html") {
         return false;
       }
-      window.open('/user/center/message','_blank')
-      // this.$router.push("/user/center/message");
+      window.open('/user/message.html','_blank')
+      // this.$router.push("/user/message.html");
     },
     searchClick() {
       // if(!this.searchContent){

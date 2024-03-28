@@ -651,7 +651,7 @@ export default {
         return false
       }
       if (item.articleId !== '')
-        window.open(location.origin + `/detail/${item.articleId}`);
+        window.open(location.origin + `/${item.articleId}.html`);
     }
     ,
     goHistory(item) {
@@ -659,7 +659,7 @@ export default {
         this.login()
         return false
       }
-      window.open(location.origin + `/detail/${item.groupDetailId}`);
+      window.open(location.origin + `/${item.groupDetailId}.html`);
     }
     ,
     getLatest() {
@@ -829,7 +829,7 @@ export default {
     ,
     buySingle(item) {
       if (this.token) {
-        this.$router.push(`/singlePay/${item.articleId}`);
+        this.$router.push(`/singlePay/${item.articleId}.html`);
         //window.open(`/singlePay/${item.articleId}/${item.articlePrice}`,'target')
       } else {
         this.loginIsShow = true;
@@ -859,7 +859,7 @@ export default {
     ,
     forgetPassword() {
       //忘记密码
-      this.$router.push("/forgetPassword");
+      this.$router.push("/forgetPassword.html");
     }
     ,
     registerSuccess() {

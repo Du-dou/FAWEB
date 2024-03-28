@@ -129,7 +129,7 @@ export default {
       this.$router.push("/pay");
     },
     goToDetail(item) {
-      this.$router.push(`/detail/${item.articleId}`);
+      this.$router.push(`/${item.articleId}.html`);
     },
   },
 };

@@ -48,7 +48,7 @@ export default {
         }else{
           console.log('登录失败')
         }
-        this.$router.push('/home');
+        this.$router.push('/');
       }).catch((err)=>{
         console.log(err)
       })

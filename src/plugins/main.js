@@ -55,13 +55,13 @@ axios.interceptors.response.use(response => {
   if (response.data.code == 2) {
     store.commit('logout', true)
     router.push({
-      path: '/home'
+      path: '/'
     })
   } else if(response.data.code == 9){
     store.commit('logout', true)
     Message.error(response.data.mess);
     router.push({
-      path: '/home'
+      path: '/'
     })
   }else {
     return Promise.resolve(response)

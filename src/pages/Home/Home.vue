@@ -258,6 +258,10 @@ export default {
     ]),
     clickSearch() {
       //如果没有登录则弹出登录框
+      if (!this.token) {
+        this.loginIsShow = true;
+        return false;
+      }
       //如果没有空检索权限，且关键词为空，则提示输入关键词
       // if (!this.userInfo.noDataSearch && this.searchText === '') {
       //   this.$message({
@@ -271,7 +275,7 @@ export default {
       this.homeSearchParam.keyword = this.searchText;
       this.homeSearchParam.search_resource = 0; //默认搜索法律法规
 
-      this.$router.push({path: "/result"});
+      this.$router.push({path: "/result.html"});
     },
     hotSearch(keyword) {
 
@@ -279,7 +283,7 @@ export default {
       this.homeSearchParam.search_field = 0;
       this.homeSearchParam.keyword = keyword;
 
-      this.$router.push({path: "/result"});
+      this.$router.push({path: "/result.html"});
     },
     setSearchField(index) {
       this.currentIndex = index;
@@ -294,7 +298,7 @@ export default {
       this.show = false
     },
     goDetail(item) {
-      window.open(location.origin + `/detail/${item.articleId}`);
+      window.open(location.origin + `/${item.articleId}.html`);
     },
     setsearchText() {
       let that = this;
@@ -309,7 +313,7 @@ export default {
     //
     //   this.setresultKeyWords(e.keywordName);
     //   this.setHomeSearchParam(e.keywordName,"")
-    //   this.$router.push("/result");
+    //   this.$router.push("/result.html");
     // },
     login() {
       console.log('登录');
@@ -335,7 +339,7 @@ export default {
       //   });
       //   return false
       // }
-      this.$router.push({path: "/result"});
+      this.$router.push({path: "/result.html"});
     },
     registerSuccess() {
       //注册成功
@@ -350,7 +354,7 @@ export default {
     },
     forgetPassword() {
       //忘记密码
-      this.$router.push("/forgetPassword");
+      this.$router.push("/forgetPassword.html");
     },
     async getLeft() {
       let res = await API.publishDateTimeList()

@@ -99,22 +99,22 @@ export default {
   },
   methods: {
     currentSet() {
-      if (this.$router.currentRoute.fullPath == "/user/center/message") {
+      if (this.$router.currentRoute.fullPath == "/user/message.html") {
         this.current = 0;
       }
-      if (this.$router.currentRoute.fullPath == "/user/center/collection") {
+      if (this.$router.currentRoute.fullPath == "/user/collection.html") {
         this.current = 1;
       }
-      if (this.$router.currentRoute.fullPath == "/user/center/myAuth") {
+      if (this.$router.currentRoute.fullPath == "/user/myAuth.html") {
         this.current = 2;
       }
-      if (this.$router.currentRoute.fullPath == "/user/center/info") {
+      if (this.$router.currentRoute.fullPath == "/user/info.html") {
         this.current = 3;
       }
-      if (this.$router.currentRoute.fullPath == "/user/center/modifyPhone") {
+      if (this.$router.currentRoute.fullPath == "/user/modifyPhone.html") {
         this.current = 4;
       }
-      if (this.$router.currentRoute.fullPath == "/user/center/changepassword") {
+      if (this.$router.currentRoute.fullPath == "/user/changepassword.html") {
         this.current = 5;
       }
     },
@@ -124,22 +124,22 @@ export default {
       }
       this.current = type;
       if (type == 0) {
-        this.$router.replace("/user/center/message");
+        this.$router.replace("/user/message.html");
       }
       if (type == 1) {
-        this.$router.replace("/user/center/collection");
+        this.$router.replace("/user/collection.html");
       }
       if (type == 2) {
-        this.$router.replace("/user/center/myAuth");
+        this.$router.replace("/user/myAuth.html");
       }
       if (type == 3) {
-        this.$router.replace("/user/center/info");
+        this.$router.replace("/user/info.html");
       }
       if (type == 4) {
-        this.$router.replace("/user/center/modifyPhone");
+        this.$router.replace("/user/modifyPhone.html");
       }
       if (type == 5) {
-        this.$router.replace("/user/center/changepassword");
+        this.$router.replace("/user/changepassword.html");
       }
     },
   },

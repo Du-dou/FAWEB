@@ -450,7 +450,7 @@
                       @click.stop
                       target="_blank"
                       :href="
-                        '/detail/' + item.statuteInfo.statuteEnglishArticleId
+                        `/${item.statuteInfo.statuteEnglishArticleId}.html`
                       "
                       v-if="
                         item.statuteInfo &&
@@ -804,7 +804,7 @@ export default {
     this.current_status.search_resource = this.homeSearchParam.search_resource;
 
     // if(this.current_status.keyword === '') { //处理刷新
-    //   this.$router.push({ path: "/home" });
+    //   this.$router.push({ path: "/" });
     //   return
     // }
 
@@ -1434,7 +1434,7 @@ export default {
     },
     forgetPassword() {
       //忘记密码
-      this.$router.push("/forgetPassword");
+      this.$router.push("/forgetPassword.html");
     },
     getAdList() {
       //获取广告
@@ -1704,7 +1704,7 @@ export default {
     },
     goDetail(item) {
       //进入详情页
-      window.open(location.origin + `/detail/${item.articleId}`);
+      window.open(location.origin + `/${item.articleId}.html`);
     },
     collect(item) {
       if (!this.token) {
